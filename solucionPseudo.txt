@@ -1,0 +1,51 @@
+Inicio 
+
+	importe = 0
+	totalunidad = 0
+
+	Escribir "Introduce el precio unitario en euros (0 para terminar): "
+	Leer precio 
+	
+	Mientras precio < 0 HACER
+		Escribir "El precio no puede ser negativo."
+		Escribir "Introduce el precio unitario en euros (0 para terminar):"
+		Leer precio
+		
+	Si precio = 0 entonces
+		Escribir "No se han registrado productos."
+	Si no 
+		Mientras precio != 0 hacer 
+			Introduce el numero de unidades: "
+			Leer  cantidad
+			
+		importe = importe + precio * cantidad 
+		totalunidad = totalunidad + cantidad
+		
+		Escribir "Introduce el precio unitario en euros (0 para terminar): "
+		Leer precio
+		
+		Mientras precio < 0 HACER
+			Escribir "El precio no puede ser negativo."
+			Escribir "Introduce el precio unitario en euros (0 para terminar):"
+			Leer precio	
+		
+		SI importe < 50 ENTONCES
+			porcentaje = 0
+		SI NO
+			SI importe < 100 ENTONCES
+				porcentaje = 5
+			SI NO
+				porcentaje = 10
+		
+		descuento = importe * porcentaje / 100
+		importeFinal = importe - descuento
+		
+		Escribir "RESUMEN DE LA COMPRA"
+		Escribir "Unidades compradas: ", totalunidad
+		Escribir "Importe antes del descuento: ", importe, " euros"
+		Escribir "Descuento aplicado: ", porcentaje, " %"
+		Escribir "Descuento: ", descuento, " euros"
+		Escribir "Importe final: ", importeFinal, " euros"
+
+			
+Fin
